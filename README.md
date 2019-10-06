@@ -4,10 +4,9 @@ cpp-benchmark is a library for benchmarking C++ code
 
 ## Documentation
 
-The available functions are documented with Doxygen style comments in the C++
-header files. For now the easiest way to view the documentation is by simply
-opening the header files and reading the comments, but I plan on finding a way
-to actually build and formally publish the documentation in the near future.
+[![Documentation](https://codedocs.xyz/tnt-coders/cpp-benchmark.svg)](https://codedocs.xyz/tnt-coders/cpp-benchmark/)
+
+Documentation can be found at <https://codedocs.xyz/tnt-coders/cpp-benchmark/>.
 
 # Build Instructions
 
@@ -29,6 +28,4 @@ To test the project, run CTest from the build/test directory.
 
 ## Dependencies
 
-This project requires the Conan package manager to automatically manage all of
-its dependencies. To install Conan see:
-https://docs.conan.io/en/latest/installation.html
+This project requires the Conan package manager to automatically manage all of its dependencies. To install Conan see: https://docs.conan.io/en/latest/installation.html
