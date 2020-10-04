@@ -16,6 +16,6 @@ FetchContent_MakeAvailable(CMakeModules)
 include(Conan)
 conan_install()
 
-add_subdirectory(docs)
+#add_subdirectory(docs)
 add_subdirectory(src)
 add_subdirectory(test)
