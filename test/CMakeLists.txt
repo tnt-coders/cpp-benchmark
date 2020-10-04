@@ -6,7 +6,7 @@ add_executable(benchmark_test
 )
 
 target_link_libraries(benchmark_test
-    TNT::benchmark
+    tnt::benchmark
     CONAN_PKG::gtest
 )
 

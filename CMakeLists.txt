@@ -1,21 +1,32 @@
-cmake_minimum_required(
-  VERSION 3.14.0
-)
+cmake_minimum_required(VERSION 3.11.4)
 
-project(benchmark
-  LANGUAGES CXX
-  VERSION 0.0.1
-)
+# Define the project
+project(cpp-benchmark LANGUAGES CXX)
 
+# Get CMake modules from Git
 include(FetchContent)
-FetchContent_Declare(CMakeModules
-  GIT_REPOSITORY https://github.com/tjwrona1992/CMakeModules.git
-)
+FetchContent_Declare(CMakeModules GIT_REPOSITORY https://github.com/tnt-coders/cmake-modules.git)
 FetchContent_MakeAvailable(CMakeModules)
 
-include(Conan)
-conan_install()
+# Include the required modules
+include(tnt/project/Project)
 
-#add_subdirectory(docs)
+# Initialize the project
+tnt_project_New(${PROJECT_NAME}
+  NAMESPACE tnt
+  CONANFILE conanfile.py
+)
+
+# Install dependencies
+tnt_project_ConanInstall(${PROJECT_NAME})
+
+# Enable testing for the project
+# Note: must be in top level CMakeLists.txt
+enable_testing()
+
+add_subdirectory(docs)
 add_subdirectory(src)
 add_subdirectory(test)
+
+# install project targets
+tnt_project_Install(${PROJECT_NAME})

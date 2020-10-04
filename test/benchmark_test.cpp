@@ -1,7 +1,7 @@
 #include <chrono>
 #include <gtest/gtest.h>
 #include <thread>
-#include <tnt/benchmark/benchmark.h>
+#include <tnt/benchmark/benchmark.hpp>
 
 using namespace std;
 using namespace tnt;
