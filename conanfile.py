@@ -8,10 +8,10 @@ class CppBenchmark(ConanFile):
     exports_sources = "CMakeLists.txt", "docs/*", "include/*", "src/*", "test/*"
     generators = "cmake"
     license = "GNU Lesser General Public License v3.0"
-    name = "cpp-dsp"
+    name = "cpp-benchmark"
     options = {"shared": [True, False]}
     settings = "os", "compiler", "build_type", "arch"
-    topics = ("dsp")
+    topics = ("benchmark")
     url = "https://github.com/tnt-coders/cpp-benchmark"
     version = "0.0.0"
 
