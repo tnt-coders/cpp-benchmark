@@ -5,8 +5,11 @@ project(cpp-benchmark LANGUAGES CXX)
 
 # Get CMake modules from Git
 include(FetchContent)
-FetchContent_Declare(CMakeModules GIT_REPOSITORY https://github.com/tnt-coders/cmake-modules.git)
-FetchContent_MakeAvailable(CMakeModules)
+FetchContent_Declare(cmake-modules
+  GIT_REPOSITORY https://github.com/tnt-coders/cmake-modules.git
+  GIT_TAG main
+)
+FetchContent_MakeAvailable(cmake-modules)
 
 # Include the required modules
 include(tnt/project/Project)
@@ -24,7 +27,6 @@ tnt_project_ConanInstall(${PROJECT_NAME})
 # Note: must be in top level CMakeLists.txt
 enable_testing()
 
-add_subdirectory(docs)
 add_subdirectory(src)
 add_subdirectory(test)
 
