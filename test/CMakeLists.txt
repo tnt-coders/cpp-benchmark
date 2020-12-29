@@ -1,13 +1,13 @@
-include(GoogleTest)
+include(Catch)
 
-add_executable(benchmark_test
+add_executable(${PROJECT_NAME}_test
     main.cpp
-    benchmark_test.cpp
+    benchmark.cpp
 )
 
-target_link_libraries(benchmark_test
-    tnt::benchmark
-    CONAN_PKG::gtest
+target_link_libraries(${PROJECT_NAME}_test
+    tnt::${PROJECT_NAME}
+    Catch2::Catch2WithMain
 )
 
-gtest_discover_tests(benchmark_test)
+catch_discover_tests(${PROJECT_NAME}_test)

@@ -1,3 +1,3 @@
-tnt_project_AddLibrary(${PROJECT_NAME} TARGET benchmark INTERFACE)
+tnt_project_AddLibrary(${PROJECT_NAME} TARGET ${PROJECT_NAME} INTERFACE)
 
-target_compile_features(benchmark INTERFACE cxx_std_17)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
