@@ -2,7 +2,7 @@ from conans import ConanFile, CMake, tools
 
 class CppBenchmark(ConanFile):
     author = "TNT Coders <tnt-coders@googlegroups.com>"
-    build_requires = "catch2/3.0.0@tnt-coders/stable"
+    build_requires = "catch2/3.0.0-1@tnt-coders/stable"
     default_options = {"shared": False}
     description = "A simple way to benchmark C++ routines"
     exports_sources = "CMakeLists.txt", "docs/*", "include/*", "src/*", "test/*"
