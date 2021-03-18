@@ -9,16 +9,16 @@ void foo();
 void foo_with_args(size_t duration);
 
 // Benchmark a void function with no arguments
-TEST_CASE("Benchmark", "[benchmark]")
+TEST_CASE("benchmark", "[benchmark]")
 {
-    SECTION("Function")
+    SECTION("function")
     {
         auto duration = benchmark::benchmark<std::chrono::milliseconds>(foo);
         CHECK(duration.count() >= 41);
         CHECK(duration.count() <= 43);
     }
 
-    SECTION("Function with arguments")
+    SECTION("function with arguments")
     {
         auto duration = benchmark::benchmark<std::chrono::milliseconds>([] {
             foo_with_args(42);
@@ -28,7 +28,7 @@ TEST_CASE("Benchmark", "[benchmark]")
         CHECK(duration.count() <= 43);
     }
 
-    SECTION("Lambda expression")
+    SECTION("lambda expression")
     {
         auto duration = benchmark::benchmark<std::chrono::milliseconds>([] {
             std::this_thread::sleep_for(std::chrono::milliseconds(42));
