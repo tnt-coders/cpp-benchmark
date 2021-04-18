@@ -14,8 +14,7 @@ TEST_CASE("benchmark", "[benchmark]")
     SECTION("function")
     {
         auto duration = benchmark::benchmark<std::chrono::milliseconds>(foo);
-        CHECK(duration.count() >= 41);
-        CHECK(duration.count() <= 43);
+        CHECK(duration.count() >= 42);
     }
 
     SECTION("function with arguments")
@@ -24,8 +23,7 @@ TEST_CASE("benchmark", "[benchmark]")
             foo_with_args(42);
         });
 
-        CHECK(duration.count() >= 41);
-        CHECK(duration.count() <= 43);
+        CHECK(duration.count() >= 42);
     }
 
     SECTION("lambda expression")
@@ -34,8 +32,7 @@ TEST_CASE("benchmark", "[benchmark]")
             std::this_thread::sleep_for(std::chrono::milliseconds(42));
         });
 
-        CHECK(duration.count() >= 41);
-        CHECK(duration.count() <= 43);
+        CHECK(duration.count() >= 42);
     }
 }
 
